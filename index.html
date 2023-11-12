@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deekshith's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,6 +16,21 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .light-mode {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #f5f5f5;
+        }
+
+        h1 {
+            color: #3498db;
         }
 
         h3 {
@@ -36,9 +50,22 @@
         footer a {
             margin: 0 10px;
         }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
     </style>
 </head>
-<body>
+<body class="light-mode">
+    <button class="toggle-btn" onclick="toggleMode()">
+        <i class="fas fa-adjust"></i>
+    </button>
     <h1>Welcome to Deekshith's Portfolio</h1>
     <h3>Contact Me to Create Bots or Tools using Python:</h3>
     <h3>Subdomains:</h3>
@@ -56,5 +83,22 @@
             <a href="//facebook.com/shdeekshith">Facebook</a>
         </p>
     </footer>
+    <script>
+        // Check user's preference and set the mode
+        const currentMode = localStorage.getItem("mode");
+        if (currentMode === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+
+        // Function to toggle between light and dark modes
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+
+            // Save the user's preference in localStorage
+            const mode = body.classList.contains("dark-mode") ? "dark" : "light";
+            localStorage.setItem("mode", mode);
+        }
+    </script>
 </body>
 </html>
