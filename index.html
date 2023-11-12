@@ -91,9 +91,37 @@
     <h1>Welcome to Deekshith's Portfolio</h1>
     <p>Contact Me to Create Bots or Tools using Python</p>
     <h3>Subdomains:</h3>
-    <p><a href="//blog.deekshith.eu.org">blog.deekshith.eu.org</a></p>
+    <p><a hrefA="//blog.deekshith.eu.org">blog.deekshith.eu.org</a></p>
     <p><a href="//error.deekshith.eu.org">error.deekshith.eu.org</a></p>
     <p><a href="//ftl.deekshith.eu.org">ftl.deekshith.eu.org</a></p>
     <h3>Email:</h3>
     <p><a href="mailto:shdeekshith@gmail.com">shdeekshith@gmail.com</a></p>
     <footer>
+        <p>
+            <a href="tg://resolve?domain=DeekshithSH">Telegram</a> |
+            <a href="mailto:shdeekshith@gmail.com?subject=Hi&body=Hello">Gmail</a> |
+            <a href="https://www.instagram.com/deekshith_sh">Instagram</a> |
+            <a href="https://twitter.com/ShDeekshith">Twitter</a> |
+            <a href="//facebook.com/shdeekshith">Facebook</a> |
+            <a href="https://github.com/DeekshithSH">GitHub</a>
+        </p>
+    </footer>
+    <script>
+        // Check user's preference and set the mode
+        const currentMode = localStorage.getItem("mode");
+        if (currentMode === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+
+        // Function to toggle between light and dark modes
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+
+            // Save the user's preference in localStorage
+            const mode = body.classList.contains("dark-mode") ? "dark" : "light";
+            localStorage.setItem("mode", mode);
+        }
+    </script>
+</body>
+</html>
